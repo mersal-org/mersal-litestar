@@ -147,6 +147,7 @@ known-first-party = [
 "mersal",
 "mersal_testing",
 "mersal_litestar",
+"mersal_polling",
 ]
 
 [build-system]
