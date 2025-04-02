@@ -1,4 +1,6 @@
-Welcome to Mersal RabbitMQ's documentation!
-==================================
+Welcome to mersal-litestar documentation!
+===========================================
 
-This is the implementation of a RabbitMQ transport for Mersal.
+Support integrating litestar with mersal.
+
+docs coming soon!

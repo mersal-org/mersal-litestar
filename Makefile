@@ -161,11 +161,7 @@ pre-commit:                                        ## Run pre-commit hooks
 # .PHONY: slotscheck
 # slotscheck:                                        ## Run slotscheck
 # 	@echo "${INFO} Running slotscheck... 🔍"
-# 	@uv run slotscheck core/src
-# 	@uv run slotscheck packages/mersal_polling/src
-# 	@uv run slotscheck packages/mersal_alchemy/src
-# 	@uv run slotscheck packages/mersal_litestar/src
-# 	@uv run slotscheck packages/mersal_msgspec/src
+# 	@uv run slotscheck mersal_litestar
 # 	@echo "${OK} Slotscheck complete ✨"
 
 .PHONY: fix
@@ -195,7 +191,7 @@ docs-clean:                                        ## Clean documentation build
 .PHONY: docs-serve
 docs-serve: docs-clean                             ## Serve documentation locally
 	@echo "${INFO} Starting documentation server... 📚"
-	@uv run sphinx-autobuild docs docs/_build/ -j auto --watch core --watch packages --watch docs --watch CONTRIBUTING.rst --port 8002
+	@uv run sphinx-autobuild docs docs/_build/ -j auto --watch mersal_litestar --watch docs --watch CONTRIBUTING.rst --port 8002
 
 .PHONY: docs
 docs: docs-clean                                   ## Build documentation
