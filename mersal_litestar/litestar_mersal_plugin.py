@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from litestar.di import Provide
-from litestar.plugins import InitPluginProtocol
+from litestar.plugins import InitPlugin
 
 from mersal.app import Mersal  # noqa: TC001
 
@@ -28,7 +28,7 @@ class LitestarMersalPluginConfig:
         return LitestarMersalPlugin(self)
 
 
-class LitestarMersalPlugin(InitPluginProtocol):
+class LitestarMersalPlugin(InitPlugin):
     def __init__(self, config: LitestarMersalPluginConfig) -> None:
         self._config = config
 
