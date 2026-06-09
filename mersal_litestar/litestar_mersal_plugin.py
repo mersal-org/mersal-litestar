@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
-from litestar.di import Provide
+from litestar.di import NamedDependency, Provide
 from litestar.plugins import InitPlugin
 
 from mersal.app import Mersal  # noqa: TC001
@@ -38,7 +38,7 @@ class LitestarMersalPlugin(InitPlugin):
             dependencies: dict[str, Provide] = {}
             for k, v in self._config.app_instances.items():
 
-                def provide_app(app: Mersal = v) -> Mersal:
+                def provide_app(app: NamedDependency[Mersal] = v) -> Mersal:
                     return app
 
                 dependencies[k] = Provide(provide_app, sync_to_thread=False)
