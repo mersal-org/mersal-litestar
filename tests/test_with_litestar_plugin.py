@@ -60,9 +60,13 @@ class MessageHandler:
         self.calls += 1
 
 
+class MessageHandlingError(Exception):
+    """Error."""
+
+
 class ThrowingMessageHandler:
     async def __call__(self, message: Any):
-        raise Exception()
+        raise MessageHandlingError()
 
 
 class MessageHandlerThatPublishesCompletedEvent:
