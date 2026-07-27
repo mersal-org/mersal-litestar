@@ -10,7 +10,7 @@ dependencies = [
     "litestar",
 ]
 readme = "README.rst"
-requires-python = ">= 3.10"
+requires-python = ">= 3.11"
 license = "MIT"
 license-files = ["LICENSE"]
 keywords = ["service bus", "message bus", "messaging", "litestar", "asgi"]
@@ -19,7 +19,6 @@ classifiers = [
   "Development Status :: 4 - Beta",
   "Natural Language :: English",
   "Operating System :: OS Independent",
-  "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
