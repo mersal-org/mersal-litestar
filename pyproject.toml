@@ -80,7 +80,7 @@ log_cli = true
 
 [tool.ruff]
 include = [
-  "mersal_litestar/**/*.{py,pyi}",
+  "src/mersal_litestar/**/*.{py,pyi}",
   "tests/**/*.{py,pyi}",
   "docs/examples/**/*.{py,pyi}",
   "pyproject.toml"
@@ -89,7 +89,7 @@ target-version = "py310"
 line-length = 120
 
 src = [
-  "mersal_litestar",
+  "src",
 ]
 
 [tool.ruff.format]
@@ -132,7 +132,7 @@ fallback-version = "0.0.0"
 local_scheme = "no-local-version"
 
 [tool.hatch.build.targets.wheel]
-packages = ["mersal_litestar"]
+packages = ["src/mersal_litestar"]
 
 [tool.hatch.metadata]
 allow-direct-references = true
@@ -165,7 +165,7 @@ warn_unreachable = true
 typeCheckingMode = "standard"
 pythonVersion = "3.11"
 include = [
-  "mersal_litestar",
+  "src/mersal_litestar",
   "tests",
 ]
 
@@ -174,5 +174,5 @@ python-version = "3.11"
 
 [tool.ty.src]
 include = [
-  "mersal_litestar",
+  "src/mersal_litestar",
 ]
