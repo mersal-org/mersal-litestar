@@ -5,8 +5,7 @@ from typing import TYPE_CHECKING
 
 from litestar.di import NamedDependency, Provide
 from litestar.plugins import InitPlugin
-
-from mersal.app import Mersal
+from mersal.core.app import Mersal
 
 if TYPE_CHECKING:
     from litestar.config.app import AppConfig

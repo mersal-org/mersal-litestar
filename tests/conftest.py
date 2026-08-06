@@ -1,3 +1,3 @@
 # pyright: reportWildcardImportFromLibrary=false
 
-from mersal_testing._internal.conftest import *
+from mersal.testing.core._internal.conftest import *
