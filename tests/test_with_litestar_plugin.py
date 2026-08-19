@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Any
 
+import anyio
 import pytest
 from litestar import Litestar, post
 from litestar.testing import AsyncTestClient
@@ -136,5 +137,11 @@ class TestLitestarPlugin:
         async with AsyncTestClient(app=app) as client:
             _ = await client.post("/request1", json={})
             _ = await client.post("/request2", json={})
+
+            # The in-memory transport's worker polls with a real backoff
+            # delay, so message delivery isn't synchronous with the request.
+            with anyio.fail_after(5):
+                while handler.calls < 2:
+                    await anyio.sleep(0.01)
 
         assert handler.calls == 2
