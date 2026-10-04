@@ -4,7 +4,7 @@ from collections.abc import Callable, Mapping
 from typing import TYPE_CHECKING
 
 from litestar.datastructures import Headers
-from litestar.types import HTTPScope
+from litestar.enums import ScopeType
 from mersal.messages import MessageHeaders
 from mersal.tracing import (
     TraceContext,
@@ -47,7 +47,7 @@ def trace_context_middleware(app: ASGIApp, extractor: TraceContextExtractor = ex
     """
 
     async def middleware(scope: Scope, receive: Receive, send: Send) -> None:
-        if scope["type"] != HTTPScope:
+        if scope["type"] != ScopeType.HTTP:
             await app(scope, receive, send)
             return
 
